@@ -9,14 +9,47 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-button {
-  font-family: inherit;
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.error-container {
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primary {
+  background-color: #fc5200;
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.secondary {
+  border: 3px solid #000;
+}
+
+.secondary:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.error {
   color: #dc3545;
   margin-top: 10px;
-  padding: 8px;
   font-size: 14px;
 }
 
