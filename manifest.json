@@ -3,6 +3,7 @@
   "name": "Kudos 'em all",
   "version": "1.0",
   "description": "Because everyone deserves a little recognition",
+  "license": "MIT",
   "permissions": [
     "activeTab",
     "scripting",
