@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const stopKudosButton = document.getElementById('stopKudosButton');
   const errorMessages = document.getElementById('errorMessages');
 
+  // Restore button states when popup opens
+  const state = await chrome.storage.local.get(['isKudosSending']);
+
+  if (state.isKudosSending) {
+    sendKudosButton.disabled = true;
+    stopKudosButton.disabled = false;
+  } else {
+    sendKudosButton.disabled = false;
+    stopKudosButton.disabled = true;
+  }
+
   const [activeTab] = await chrome.tabs.query({
     active: true,
     currentWindow: true,
@@ -22,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(response.status);
         stopKudosButton.disabled = false;
         sendKudosButton.disabled = true;
+        await chrome.storage.local.set({ isKudosSending: true });
       }
     } catch (error) {
       console.log('Error:', error.message);
@@ -39,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log(response.status);
         stopKudosButton.disabled = true;
         sendKudosButton.disabled = false;
+        await chrome.storage.local.set({ isKudosSending: false });
       }
     } catch (error) {
       console.log('Error:', error.message);
