@@ -10,14 +10,6 @@
     "tabs",
     "storage"
   ],
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.strava.com/*"
-      ],
-      "js": ["js/content.js"]
-    }
-  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

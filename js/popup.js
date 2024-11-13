@@ -18,10 +18,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     active: true,
     currentWindow: true,
   });
+
   if (!activeTab?.url || !activeTab.url.includes('strava.com')) {
     errorMessages.textContent = 'Please open Strava first';
     sendKudosButton.disabled = true;
     return;
+  } else {
+    chrome.scripting.executeScript({
+      target: { tabId: activeTab.id },
+      files: ['js/content.js'],
+    });
   }
 
   sendKudosButton.addEventListener('click', async () => {
