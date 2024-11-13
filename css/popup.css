@@ -62,6 +62,7 @@ button:disabled {
   color: #FF5E5B;
   text-decoration: none;
   font-weight: 600;
+  text-decoration: underline;
   transition: color 0.2s ease;
 }
 
