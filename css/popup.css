@@ -53,3 +53,18 @@ button:disabled {
   font-size: 14px;
 }
 
+.support-text {
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+
+.support-link {
+  color: #FF5E5B;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.support-link:hover {
+  color: #FF8B89;
+}
