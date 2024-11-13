@@ -10,7 +10,6 @@
     "tabs",
     "storage"
   ],
-  "host_permissions": ["https://www.strava.com/*"],
   "content_scripts": [
     {
       "matches": [
